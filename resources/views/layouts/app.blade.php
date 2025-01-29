@@ -17,8 +17,8 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     {{-- <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
-        data-turbolinks-eval="false"></script>
-    @livewireScripts --}}
+        data-turbolinks-eval="false"></script> --}}
+    @livewireScripts
     <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
         data-turbo-eval="false"></script>
 
@@ -46,6 +46,14 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
+                        @if (Auth::user())
+                            @if (Auth::user()->level == 0)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('BelanjaUser') }}">{{ 'Belanja Anda' }}</a>
+                                </li>
+                            @endif
+                        @endif
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
