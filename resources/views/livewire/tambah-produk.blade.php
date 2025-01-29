@@ -56,7 +56,7 @@
 
                         <!-- Tombol Submit -->
                         <div class="col-md-6">
-                            <button type="submit" class="btn btn-success btn-block">Tambah Produk</button>
+                            <button type="submit" class="btn btn-success w-100">Tambah Produk</button>
                         </div>
 
                     </form>
